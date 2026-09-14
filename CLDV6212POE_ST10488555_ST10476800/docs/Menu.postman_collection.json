@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "6f2300ae-124d-4af2-b98e-9f353c04b3ac",
+    "name": "Menu",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58205099"
+  },
+  "item": [
+    {
+      "name": "{{baseUrl}}/menu",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"partitionKey\": \"Hot Drinks\",\r\n  \"rowKey\": \"COF-001\",\r\n  \"name\": \"Espresso\",\r\n  \"description\": \"Strong and short\",\r\n  \"price\": 25.00,\r\n  \"isAvailable\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/menu",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "menu"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateMenuItem",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Espresso\",\r\n  \"description\": \"Strong and short\",\r\n  \"price\": 30.00,\r\n  \"isAvailable\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/menu/Hot Drinks/COF-001",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "menu",
+            "Hot Drinks",
+            "COF-001"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetMenuItemsByCategory",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"partitionKey\": \"Hot Drinks\",\r\n  \"rowKey\": \"COF-001\",\r\n  \"name\": \"Espresso\",\r\n  \"description\": \"Strong and short\",\r\n  \"price\": 25.00,\r\n  \"isAvailable\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/menu/category/Hot Drinks",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "menu",
+            "category",
+            "Hot Drinks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "{{baseUrl}}/menu/Hot Drinks/COF-001",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/menu/Hot Drinks/COF-001",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "menu",
+            "Hot Drinks",
+            "COF-001"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
