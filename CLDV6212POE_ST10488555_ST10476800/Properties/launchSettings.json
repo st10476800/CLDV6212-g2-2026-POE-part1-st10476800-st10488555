@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "CLDV6212POE_ST10488555_ST10476800": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7253"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "containerRunArguments": "--init",
+      "httpPort": 33659,
+      "useSSL": false
+    }
+  }
+}
