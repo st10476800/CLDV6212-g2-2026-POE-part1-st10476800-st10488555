@@ -3,7 +3,7 @@
 
 This is our Azure Functions app for CoffeeChill. It handles menu items and staff documents through simple HTTP endpoints, and it stores everything in Azurite (Table storage for the menu, Blob/File storage for staff documents) so it can run without a real Azure account.
 
-CLDV6212 Group 2 – 2026 – Portfolio of Evidence, Part 1
+CLDV6212 Group 2 – 2026 – Portfolio of Evidence - Part 1 - Group 15
 Students: st10476800, st10488555
 
 ## What you need before you start
