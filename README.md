@@ -1,10 +1,9 @@
-# CLDV6212-g2-2026-POE-part1-st10476800-st10488555
 # CoffeeChill – Menu & Staff Document API
 
 This is our Azure Functions app for CoffeeChill. It handles menu items and staff documents through simple HTTP endpoints, and it stores everything in Azurite (Table storage for the menu, Blob/File storage for staff documents) so it can run without a real Azure account.
 
-CLDV6212 Group 2 – 2026 – Portfolio of Evidence - Part 1 - Group 15
-Students: st10476800, st10488555
+> CLDV6212 Group 2 – 2026 – Portfolio of Evidence, Part 1
+> Students: st10476800, st10488555
 
 ## What you need before you start
 
@@ -35,8 +34,10 @@ docker network create coffeenchill-net
 
 Then start Azurite:
 ```
-docker run -d --name azurite --network coffeenchill-net -p 10000:10000 -p 10001:10001 -p 10002:10002 st10476800/coffeenchill-azurite:v1.0
+docker run -d --name azurite --network coffeenchill-net -p 10000:10000 -p 10001:10001 -p 10002:10002 st10476800/coffeenchill-azurite:v1.0 azurite -l /data --blobHost 0.0.0.0 --queueHost 0.0.0.0 --tableHost 0.0.0.0 --skipApiVersionCheck
 ```
+
+(The `--skipApiVersionCheck` flag matters here. Without it, the staff document endpoints fail with a 400 error, because the Azure Storage SDK in this project sends a newer API version than this Azurite build recognizes by default.)
 
 Then start the Functions app, pointing it at that same Azurite container:
 ```
@@ -81,11 +82,11 @@ We exported our full Postman collection and it's committed at `docs/<collection-
 
 ## Who worked on what
 
-What they worked on
-
-st10476800: Built the menu item functions (create, get all, get by category, update, delete), set up the Dockerfile and pushed both images to Docker Hub, ran the full Postman test pass 
-st10488555 Built the staff document functions (upload, list, download), set up the Azurite Table and Blob storage connections, wrote the README and put together the Postman collection 
+| Student Number | What they worked on |
+|---|---|
+| st10476800 | Built the menu item functions (create, get all, get by category, update, delete), set up the Dockerfile and pushed both images to Docker Hub, ran the full Postman test pass |
+| st10488555 | Built the staff document functions (upload, list, download), set up the Azurite Table and Blob storage connections, wrote the README and put together the Postman collection |
 
 ## Demo video
 
-
+*TODO: add YouTube link here*
